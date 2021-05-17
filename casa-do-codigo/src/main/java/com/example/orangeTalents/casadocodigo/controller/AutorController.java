@@ -1,5 +1,7 @@
 package com.example.orangeTalents.casadocodigo.controller;
 
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +24,16 @@ public class AutorController {
 	
 	@PostMapping
 	public ResponseEntity<Autor> cadastrarAutor(@RequestBody @Valid AutorForm form) {
+		
+		Optional<Autor> autor2 = autorRepository.findByEmail(form.getEmail());
+		
+		if(autor2.isPresent()) {
+			return ResponseEntity.badRequest().build();
+		} 
+		
 		Autor autor = form.converter(form);
 		autorRepository.save(autor);
+		
 		
 		return ResponseEntity.ok(autor);
 	}
