@@ -16,7 +16,7 @@ import javax.validation.Payload;
 @Constraint(validatedBy = { UniqueValueValidator.class })
 public @interface UniqueValue {
 	
-	String message() default "{Já existe uma categoria com esse nome}";
+	String message() default "{Já existe um atributo com esse mesmo valor}";
 	
 	Class<?>[] groups() default {};
 	
