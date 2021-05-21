@@ -80,4 +80,36 @@ public class Livro {
 		return titulo;
 	}
 
+	public String getResumo() {
+		return resumo;
+	}
+
+	public String getSumario() {
+		return sumario;
+	}
+
+	public BigDecimal getPreco_livro() {
+		return preco_livro;
+	}
+
+	public Integer getNumero_paginas() {
+		return numero_paginas;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public LocalDate getData_publicacao() {
+		return data_publicacao;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public Autor getAutor() {
+		return autor;
+	}
+
 }
