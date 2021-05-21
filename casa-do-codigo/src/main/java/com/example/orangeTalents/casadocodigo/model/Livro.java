@@ -2,7 +2,6 @@ package com.example.orangeTalents.casadocodigo.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,13 +12,10 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.ISBN;
-
-import com.example.orangeTalents.casadocodigo.controller.annotations.UniqueValue;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 
@@ -74,6 +70,14 @@ public class Livro {
 		this.data_publicacao = data_publicacao;
 		this.categoria = categoria;
 		this.autor = autor;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getTitulo() {
+		return titulo;
 	}
 
 }
